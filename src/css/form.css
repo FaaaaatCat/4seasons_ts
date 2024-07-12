@@ -1,0 +1,445 @@
+.gtn-select {
+  height: 32px;
+  padding: 0 0.5rem;
+  border: none;
+  -webkit-box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+          box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-family: Pretendard !important;
+}
+
+.gtn-select:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.gtn-input {
+  height: 32px;
+  padding: 0 0.5rem;
+  border: 1px solid #9591b1;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-family: Pretendard !important;
+}
+
+.gtn-input:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.gtn-input:focus {
+  outline: none !important;
+  border: 1px solid #505118;
+  -webkit-box-shadow: 0rem 0.47rem 2.19rem rgba(8, 10, 37, 0.1), 0rem 0.94rem 1.41rem rgba(8, 10, 37, 0.1), 0rem 0.25rem 0.53rem rgba(8, 10, 37, 0.2), 0rem 0.13rem 0.19rem rgba(8, 10, 37, 0.1);
+          box-shadow: 0rem 0.47rem 2.19rem rgba(8, 10, 37, 0.1), 0rem 0.94rem 1.41rem rgba(8, 10, 37, 0.1), 0rem 0.25rem 0.53rem rgba(8, 10, 37, 0.2), 0rem 0.13rem 0.19rem rgba(8, 10, 37, 0.1);
+}
+
+.gtn-input:focus:hover {
+  -webkit-filter: none !important;
+          filter: none !important;
+}
+
+.gtn-btn {
+  display: block;
+  width: 150px;
+  height: 32px;
+  padding: 0 1rem;
+  background: white;
+  color: #4D4D3F;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+          box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-family: Pretendard !important;
+}
+
+.gtn-btn:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.gtn-btn.btn-disable {
+  opacity: 0.3;
+}
+
+.gtn-btn.btn-disable:hover {
+  -webkit-filter: none !important;
+          filter: none !important;
+  cursor: auto;
+}
+
+.gtn-btn.btn-icon-only {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.gtn-btn.btn-icon-only span {
+  color: #73725D;
+}
+
+.gtn-btn.btn-brown {
+  background: linear-gradient(-45deg, #b78c1f 0%, #4e4234 100%);
+  color: white;
+  font-weight: 500;
+}
+
+.gtn-btn.btn-yellow {
+  background-color: #DFE099;
+  color: #674738;
+}
+
+.gtn-btn.btn-mint {
+  background-color: #625bd3;
+  color: white;
+}
+
+.gtn-btn.btn-white {
+  background: white;
+  color: #4D4D3F;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.gtn-btn.btn-white span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #ffdb26;
+  -webkit-transform: translateY(150%);
+          transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: calc((var(--n) - 1) * 0.1s);
+          transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+.gtn-btn.btn-white:hover {
+  color: black;
+  -webkit-filter: none;
+          filter: none;
+}
+
+.gtn-btn.btn-white:hover span {
+  -webkit-transform: translateY(0) scale(2);
+          transform: translateY(0) scale(2);
+}
+
+.gtn-btn.btn-white:hover span:nth-child(1) {
+  --n: 1;
+}
+
+.gtn-btn.btn-white:hover span:nth-child(2) {
+  --n: 2;
+}
+
+.gtn-btn.btn-white:hover span:nth-child(3) {
+  --n: 3;
+}
+
+.gtn-btn.btn-white:hover span:nth-child(4) {
+  --n: 4;
+}
+
+#root .mini-border {
+  width: 1px;
+  height: 32px;
+  background: #D3D3C9 !important;
+}
+
+#root .mini-border.border-long {
+  width: 100%;
+  height: 2px;
+}
+
+#root .gtn-toggle {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+#root .gtn-toggle input[type="checkbox"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  border: 1px solid #C4C3B6;
+  border-radius: 1.25em;
+  width: 2.25em;
+  height: 1.25em;
+  margin: 0;
+}
+
+#root .gtn-toggle input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  background-color: #C4C3B6;
+  -webkit-transition: left 250ms linear;
+  transition: left 250ms linear;
+}
+
+#root .gtn-toggle input[type="checkbox"]:checked {
+  background-color: #625bd3;
+  border-color: #625bd3;
+}
+
+#root .gtn-toggle input[type="checkbox"]:checked::before {
+  background-color: white;
+  left: 1em;
+}
+
+#root .gtn-toggle input[type="checkbox"]:enabled:hover {
+  -webkit-box-shadow: 0 0 10px lightgray;
+          box-shadow: 0 0 10px lightgray;
+}
+
+#root #file {
+  display: none;
+}
+
+#root .picture-upload-btn {
+  font-family: Pretendard !important;
+  width: 118px;
+  height: 32px;
+  padding: 0 1rem 0 0.8rem;
+  background: #D3D3C9;
+  border: 1px solid #C4C3B6;
+  color: #4D4D3F;
+  border-radius: 4px;
+  -webkit-box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+          box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+  font-weight: 600;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#root .picture-upload-btn span {
+  font-size: 18px;
+}
+
+#root .picture-upload-btn:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+@media (max-width: 480px) {
+  #root .picture-upload-btn {
+    width: 32px;
+    padding: 0;
+    font-size: 0;
+    gap: 0;
+  }
+}
+
+#root .chatting-textarea {
+  font-family: Pretendard !important;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 4px;
+  min-height: 32px !important;
+  padding: 5px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  font-size: 14px;
+  font-weight: 500;
+  color: #313128;
+}
+
+.ReactModalPortal * {
+  font-family: "Pretendard";
+}
+
+.ReactModalPortal > div {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.ReactModalPortal > div > div {
+  width: 400px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0rem 0.47rem 2.19rem rgba(8, 10, 37, 0.02), 0rem 0.94rem 1.41rem rgba(8, 10, 37, 0.02), 0rem 0.25rem 0.53rem rgba(8, 10, 37, 0.04), 0rem 0.13rem 0.19rem rgba(8, 10, 37, 0.02);
+          box-shadow: 0rem 0.47rem 2.19rem rgba(8, 10, 37, 0.02), 0rem 0.94rem 1.41rem rgba(8, 10, 37, 0.02), 0rem 0.25rem 0.53rem rgba(8, 10, 37, 0.04), 0rem 0.13rem 0.19rem rgba(8, 10, 37, 0.02);
+  background-color: white;
+  outline: none !important;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 0 !important;
+}
+
+.ReactModalPortal > div > div .modal-header {
+  padding: 10px 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ReactModalPortal > div > div .modal-header p {
+  font-size: 1rem;
+}
+
+.ReactModalPortal > div > div .modal-header span {
+  cursor: pointer;
+  color: #73725D;
+}
+
+.ReactModalPortal > div > div .modal-header span:hover {
+  color: #313128;
+}
+
+.ReactModalPortal > div > div .modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 1rem;
+}
+
+.ReactModalPortal > div > div .modal-body.flx-start {
+  text-align: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.ReactModalPortal > div > div .modal-btn {
+  margin-top: 1rem;
+  border-top: 1px solid #E2E2DC;
+  background-color: #F2F1EE;
+  padding: 10px 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.ReactModalPortal > div > div .modal-btn button {
+  width: 100px;
+}
+
+.ReactModalPortal .modal__member {
+  width: 400px;
+}
+
+.ReactModalPortal .modal__member .modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.ReactModalPortal .modal__member .modal-body .profile-img {
+  width: 200px;
+  height: 200px;
+  background-color: #D3D3C9;
+  border: 1px solid #D3D3C9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ReactModalPortal .modal__member .modal-body .profile-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.ReactModalPortal .modal__member .modal-body .nameplate {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.ReactModalPortal .modal__member .modal-body .profile-info .info-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+}
+
+.ReactModalPortal .modal__member .modal-body .profile-info .info-item span {
+  color: #ADAC9A;
+  font-size: 1rem;
+}
+
+.ReactModalPortal .modal__member .modal-body .profile-info .info-item p {
+  color: #73725D;
+}

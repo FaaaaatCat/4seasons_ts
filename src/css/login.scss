@@ -1,0 +1,26 @@
+@import "_varient";
+
+//로그인
+// .login-area {
+//   width: 100vw;
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: cover;
+//   transition: all 0.5s;
+//   overflow-y: auto;
+// }
+.login-area {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  background-color: red;
+}

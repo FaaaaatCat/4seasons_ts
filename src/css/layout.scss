@@ -1,0 +1,58 @@
+@import "_varient";
+
+@mixin cardDesign() {
+  background-color: $card-bg-color;
+  border: $card-border;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+  backdrop-filter: blur(10px);
+}
+//로고
+@at-root .logo {
+  width: 180px;
+  height: 30px;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/gratia-2cdd0.appspot.com/o/gratine%2Flogo.png?alt=media&token=e45f8be9-4a1f-444a-8fbd-f2f1f2bb48b3");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  &.logo_black {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/gratia-2cdd0.appspot.com/o/gratine%2Flogo2.png?alt=media&token=1b862dd5-1aa0-4321-9fcf-77d6388514d3");
+    width: 148px;
+    height: 58px;
+  }
+}
+
+//전체
+body {
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: $yellow-200;
+  border-radius: $form-radius;
+  background-clip: padding-box;
+  border: 1px solid transparent; //pdding 대신 여백사용할때
+}
+*::-webkit-scrollbar-track {
+  background-color: $yellow-700;
+  border-radius: 10px;
+}
+
+//미디어쿼리
+@media only screen and (max-width: $breakpoint-labtop) {
+  #root {
+    height: calc(var(--var, 1vh) * 100);
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  #root::after {
+    display: none !important;
+  }
+}

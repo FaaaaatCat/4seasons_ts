@@ -1,0 +1,332 @@
+@import "_varient";
+
+@mixin hoverEffect() {
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    filter: brightness(0.9);
+    transition: all 0.2s;
+  }
+}
+@mixin formFont() {
+  font-family: Pretendard !important;
+}
+
+#root {
+  //셀렉트
+  @at-root .gtn-select {
+    height: $form-height;
+    padding: 0 0.5rem;
+    border: none;
+    box-shadow: $form-shadow;
+    border-radius: $form-radius;
+    @include hoverEffect();
+    @include formFont();
+  }
+
+  //인풋
+  @at-root .gtn-input {
+    height: $form-height;
+    padding: 0 $form-left-padding;
+    // background-color: white !important; //왜 안되지?
+    border: 1px solid $form-border-color;
+    border-radius: $form-radius;
+    @include hoverEffect();
+    @include formFont();
+    &:focus {
+      outline: none !important;
+      border: 1px solid $yellow-800;
+      box-shadow: $card-strong-shadow;
+      &:hover {
+        filter: none !important;
+      }
+    }
+  }
+
+  //버튼
+  @at-root .gtn-btn {
+    display: block;
+    width: 150px;
+    height: $form-height;
+    padding: 0 1rem;
+    background: white;
+    color: $brown-800;
+    border-radius: $form-radius;
+    border: none;
+    outline: none;
+    box-shadow: $form-shadow;
+    font-weight: 600;
+    @include hoverEffect();
+    @include formFont();
+    &.btn-disable{
+      opacity: 0.3;
+      &:hover{
+        filter: none !important;
+        cursor: auto;
+      }
+    }
+    &.btn-icon-only {
+      width: $form-height;
+      height: $form-height;
+      padding: 0;
+      & span {
+        color: $brown-700;
+      }
+    }
+    &.btn-brown {
+      background: linear-gradient(
+        -45deg,
+        rgb(183, 140, 31) 0%,
+        rgb(78, 66, 52) 100%
+      );
+      color: white;
+      font-weight: 500;
+    }
+    &.btn-yellow {
+      background-color: $yellow-300;
+      color: $brown;
+    }
+    &.btn-mint {
+      background-color: $purple;
+      color: white;
+    }
+    &.btn-white {
+      background: white;
+      color: $brown-800;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: 0.5s;
+      & span {
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        background-color: rgb(255, 219, 38);
+        transform: translateY(150%);
+        border-radius: 50%;
+        left: calc((var(--n) - 1) * 25%);
+        transition: 0.5s;
+        transition-delay: calc((var(--n) - 1) * 0.1s);
+        z-index: -1;
+      }
+      &:hover {
+        color: black;
+        filter: none;
+        & span {
+          transform: translateY(0) scale(2);
+          &:nth-child(1) {
+            --n: 1;
+          }
+          &:nth-child(2) {
+            --n: 2;
+          }
+          &:nth-child(3) {
+            --n: 3;
+          }
+          &:nth-child(4) {
+            --n: 4;
+          }
+        }
+      }
+    }
+  }
+  //미니보더
+  .mini-border {
+    width: 1px;
+    height: $form-height;
+    background: $brown-300 !important;
+    &.border-long {
+      width: 100%;
+      height: 2px;
+    }
+  }
+
+  //토글
+  .gtn-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    & input[type="checkbox"] {
+      appearance: none;
+      position: relative;
+      border: 1px solid $brown-400;
+      border-radius: 1.25em;
+      width: 2.25em;
+      height: 1.25em;
+      margin: 0;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        transform: scale(0.8);
+        background-color: $brown-400;
+        transition: left 250ms linear;
+      }
+      &:checked {
+        background-color: $purple;
+        border-color: $purple;
+        &::before {
+          background-color: white;
+          left: 1em;
+        }
+      }
+      &:enabled:hover {
+        box-shadow: 0 0 10px lightgray;
+      }
+    }
+  }
+
+  #file {
+    display: none;
+  }
+  & .picture-upload-btn {
+    @include formFont();
+    width: 118px;
+    height: $chat-form-height;
+    padding: 0 1rem 0 0.8rem;
+    background: $brown-300;
+    border: 1px solid $brown-400;
+    color: $brown-800;
+    border-radius: $form-radius;
+    box-shadow: $form-shadow;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: $form-font-weight;
+    transition: all 0.2s;
+    & span {
+      font-size: 18px;
+    }
+    @include hoverEffect();
+    @media (max-width: $breakpoint-mobile) {
+      width: $form-height;
+      padding: 0;
+      font-size: 0;
+      gap: 0;
+    }
+  }
+
+  & .chatting-textarea {
+    @include formFont();
+    flex: 1;
+    border-radius: $form-radius;
+    min-height: $chat-form-height !important;
+    padding: 5px;
+    transition: all 0.1s;
+    font-size: 14px;
+    font-weight: 500;
+    color: $brown-900;
+  }
+}
+
+//모달
+.ReactModalPortal {
+  & * {
+    font-family: "Pretendard";
+  }
+  & > div {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    & > div {
+      width: 400px;
+      border-radius: $card-radius;
+      box-shadow: $card-shadow;
+      background-color: white;
+      outline: none !important;
+      margin: 0 auto;
+      margin-top: 1rem;
+      padding: 0 !important;
+      & .modal-header {
+        //border-bottom: 1px solid $brown-100;
+        padding: 10px 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & p {
+          font-size: 1rem;
+        }
+        & span {
+          cursor: pointer;
+          color: $brown-700;
+          &:hover {
+            color: $brown-900;
+          }
+        }
+      }
+      & .modal-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        padding: 1rem;
+        &.flx-start {
+          text-align: left;
+          align-items: flex-start;
+        }
+      }
+      & .modal-btn {
+        margin-top: 1rem;
+        border-top: 1px solid $brown-200;
+        background-color: $brown-100;
+        padding: 10px 1rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        & button {
+          width: 100px;
+        }
+      }
+    }
+  }
+
+  //멤버 모달
+  & .modal__member {
+    width: 400px;
+    //height: 420px;
+    & .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      & .profile-img {
+        width: 200px;
+        height: 200px;
+        background-color: $brown-300;
+        border: 1px solid $brown-300;
+        border-radius: $form-radius;
+        overflow: hidden;
+        & img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      & .nameplate {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      & .profile-info {
+        & .info-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          & span {
+            color: $brown-500;
+            font-size: 1rem;
+          }
+          & p {
+            color: $brown-700;
+          }
+        }
+      }
+    }
+  }
+}

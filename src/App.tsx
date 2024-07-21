@@ -9,11 +9,13 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import LoadingScreen from './components/loading-screen';
 import { auth } from './firebase';
+import ProtectedRoute from './components/protected-route';
 
 const router = createBrowserRouter([
+  //로그인한 사용자가 보는 화면
   {
     path: "/",
-    element: <Layout />, //오직 로그인한 유저만 사용
+    element: <ProtectedRoute><Layout /></ProtectedRoute>, //오직 로그인한 유저만 사용
     children: [
       {
         path: "",
@@ -25,6 +27,7 @@ const router = createBrowserRouter([
       }
     ]
   },
+  //로그인 전에 보는 화면
   {
     path: "/login",
     element: <Login />
@@ -35,10 +38,11 @@ const router = createBrowserRouter([
   }
 ])
 
+//글로벌 스타일 만드는 곳
 const GlobalStyles = createGlobalStyle`
 ${reset};
 body{
-  color:red;
+  //color:red;
 }
 `;
 

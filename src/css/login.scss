@@ -22,5 +22,10 @@
   align-items: center;
   justify-content: center;
   overflow-y: auto;
-  background-color: red;
+  background-color: gray;
+  & .errorMsg{
+    color: lightcoral;
+    font-weight: bold;
+    margin-top: 10px;
+  }
 }

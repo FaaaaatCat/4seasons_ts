@@ -15,5 +15,12 @@
       -ms-flex-pack: center;
           justify-content: center;
   overflow-y: auto;
-  background-color: red;
+  background-color: gray;
 }
+
+.login-area .errorMsg {
+  color: lightcoral;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=login.css.map */

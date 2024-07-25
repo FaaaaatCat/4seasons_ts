@@ -29,6 +29,55 @@
 body {
 }
 
+//홈
+.home-menu{
+  border: 1px solid black;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  & li{
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: lightblue;
+  }
+}
+
+
+//미션
+.mission-area{
+  border:  1px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  & textarea{
+    border: 2px solid gray;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    resize: none;
+    &::placeholder{
+      font-size: 16px;
+    }
+    &:focus{
+      outline: none;
+      border-color: red;
+    }
+  }
+  & label{
+    padding: 10px;
+    color: blue;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid blue;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+
+
 *::-webkit-scrollbar {
   width: 6px;
   height: 6px;

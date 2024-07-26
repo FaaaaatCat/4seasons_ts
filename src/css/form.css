@@ -1,4 +1,4 @@
-.gtn-select {
+.sz-select {
   height: 32px;
   padding: 0 0.5rem;
   border: none;
@@ -11,14 +11,14 @@
   font-family: Pretendard !important;
 }
 
-.gtn-select:hover {
+.sz-select:hover {
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
-.gtn-input {
+.sz-input {
   height: 32px;
   padding: 0 0.5rem;
   border: 1px solid #9591b1;
@@ -29,26 +29,26 @@
   font-family: Pretendard !important;
 }
 
-.gtn-input:hover {
+.sz-input:hover {
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
-.gtn-input:focus {
+.sz-input:focus {
   outline: none !important;
   border: 1px solid #505118;
   -webkit-box-shadow: 0rem 0.47rem 2.19rem rgba(8, 10, 37, 0.1), 0rem 0.94rem 1.41rem rgba(8, 10, 37, 0.1), 0rem 0.25rem 0.53rem rgba(8, 10, 37, 0.2), 0rem 0.13rem 0.19rem rgba(8, 10, 37, 0.1);
           box-shadow: 0rem 0.47rem 2.19rem rgba(8, 10, 37, 0.1), 0rem 0.94rem 1.41rem rgba(8, 10, 37, 0.1), 0rem 0.25rem 0.53rem rgba(8, 10, 37, 0.2), 0rem 0.13rem 0.19rem rgba(8, 10, 37, 0.1);
 }
 
-.gtn-input:focus:hover {
+.sz-input:focus:hover {
   -webkit-filter: none !important;
           filter: none !important;
 }
 
-.gtn-btn {
+.sz-btn {
   display: block;
   width: 150px;
   height: 32px;
@@ -67,50 +67,50 @@
   font-family: Pretendard !important;
 }
 
-.gtn-btn:hover {
+.sz-btn:hover {
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
-.gtn-btn.btn-disable {
+.sz-btn.btn-disable {
   opacity: 0.3;
 }
 
-.gtn-btn.btn-disable:hover {
+.sz-btn.btn-disable:hover {
   -webkit-filter: none !important;
           filter: none !important;
   cursor: auto;
 }
 
-.gtn-btn.btn-icon-only {
+.sz-btn.btn-icon-only {
   width: 32px;
   height: 32px;
   padding: 0;
 }
 
-.gtn-btn.btn-icon-only span {
+.sz-btn.btn-icon-only span {
   color: #73725D;
 }
 
-.gtn-btn.btn-brown {
+.sz-btn.btn-brown {
   background: linear-gradient(-45deg, #b78c1f 0%, #4e4234 100%);
   color: white;
   font-weight: 500;
 }
 
-.gtn-btn.btn-yellow {
+.sz-btn.btn-yellow {
   background-color: #DFE099;
   color: #674738;
 }
 
-.gtn-btn.btn-mint {
+.sz-btn.btn-mint {
   background-color: #625bd3;
   color: white;
 }
 
-.gtn-btn.btn-white {
+.sz-btn.btn-white {
   background: white;
   color: #4D4D3F;
   position: relative;
@@ -120,7 +120,7 @@
   transition: 0.5s;
 }
 
-.gtn-btn.btn-white span {
+.sz-btn.btn-white span {
   position: absolute;
   width: 25%;
   height: 100%;
@@ -136,30 +136,30 @@
   z-index: -1;
 }
 
-.gtn-btn.btn-white:hover {
+.sz-btn.btn-white:hover {
   color: black;
   -webkit-filter: none;
           filter: none;
 }
 
-.gtn-btn.btn-white:hover span {
+.sz-btn.btn-white:hover span {
   -webkit-transform: translateY(0) scale(2);
           transform: translateY(0) scale(2);
 }
 
-.gtn-btn.btn-white:hover span:nth-child(1) {
+.sz-btn.btn-white:hover span:nth-child(1) {
   --n: 1;
 }
 
-.gtn-btn.btn-white:hover span:nth-child(2) {
+.sz-btn.btn-white:hover span:nth-child(2) {
   --n: 2;
 }
 
-.gtn-btn.btn-white:hover span:nth-child(3) {
+.sz-btn.btn-white:hover span:nth-child(3) {
   --n: 3;
 }
 
-.gtn-btn.btn-white:hover span:nth-child(4) {
+.sz-btn.btn-white:hover span:nth-child(4) {
   --n: 4;
 }
 
@@ -174,7 +174,7 @@
   height: 2px;
 }
 
-#root .gtn-toggle {
+#root .sz-toggle {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -185,7 +185,7 @@
   cursor: pointer;
 }
 
-#root .gtn-toggle input[type="checkbox"] {
+#root .sz-toggle input[type="checkbox"] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -197,7 +197,7 @@
   margin: 0;
 }
 
-#root .gtn-toggle input[type="checkbox"]::before {
+#root .sz-toggle input[type="checkbox"]::before {
   content: "";
   position: absolute;
   left: 0;
@@ -211,17 +211,17 @@
   transition: left 250ms linear;
 }
 
-#root .gtn-toggle input[type="checkbox"]:checked {
+#root .sz-toggle input[type="checkbox"]:checked {
   background-color: #625bd3;
   border-color: #625bd3;
 }
 
-#root .gtn-toggle input[type="checkbox"]:checked::before {
+#root .sz-toggle input[type="checkbox"]:checked::before {
   background-color: white;
   left: 1em;
 }
 
-#root .gtn-toggle input[type="checkbox"]:enabled:hover {
+#root .sz-toggle input[type="checkbox"]:enabled:hover {
   -webkit-box-shadow: 0 0 10px lightgray;
           box-shadow: 0 0 10px lightgray;
 }

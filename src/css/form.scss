@@ -14,7 +14,7 @@
 
 #root {
   //셀렉트
-  @at-root .gtn-select {
+  @at-root .sz-select {
     height: $form-height;
     padding: 0 0.5rem;
     border: none;
@@ -25,7 +25,7 @@
   }
 
   //인풋
-  @at-root .gtn-input {
+  @at-root .sz-input {
     height: $form-height;
     padding: 0 $form-left-padding;
     // background-color: white !important; //왜 안되지?
@@ -44,7 +44,7 @@
   }
 
   //버튼
-  @at-root .gtn-btn {
+  @at-root .sz-btn {
     display: block;
     width: 150px;
     height: $form-height;
@@ -142,7 +142,7 @@
   }
 
   //토글
-  .gtn-toggle {
+  .sz-toggle {
     display: inline-flex;
     align-items: center;
     gap: 5px;

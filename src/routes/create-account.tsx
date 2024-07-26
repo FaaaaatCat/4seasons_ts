@@ -1,11 +1,13 @@
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 import { useState } from "react"
-import { auth } from "../firebase";
+import { auth, dbService } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { FirebaseError } from "firebase/app";
+import { addDoc, collection } from "firebase/firestore";
 
 export default function CreateAccount() {
-
+    const auth = getAuth();
+    const user = auth.currentUser;
     const [isLoading, setIsLoading] = useState(false);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -32,7 +34,23 @@ export default function CreateAccount() {
         try{
             setIsLoading(true);
             const credentials = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(credentials.user);
+            //회원가입시 유저 정보 저장
+            const fbUserObj = {
+                uid: credentials.user.uid,
+                email: email,
+                money: 0,
+                item: '완드, 학생증',
+                hp: 100,
+                login: true,
+                displayName: email.split("@")[0],
+                // photoURL: defaultProfile,
+                attendCount : 0,
+                attendRanNum: 0,
+                totalAttend: 0,
+                attendDate: '',
+            }
+            await addDoc(collection(dbService, "user"), fbUserObj);
+
             await updateProfile(credentials.user,{
                 displayName: name,
             });

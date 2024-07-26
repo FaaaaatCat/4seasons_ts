@@ -45,10 +45,11 @@ body {
 
 //미션
 .mission-area{
+  padding: 1rem;
   border:  1px solid red;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   & textarea{
     border: 2px solid gray;
     padding: 20px;

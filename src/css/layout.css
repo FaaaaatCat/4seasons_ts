@@ -38,6 +38,7 @@
 }
 
 .mission-area {
+  padding: 1rem;
   border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -46,7 +47,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .mission-area textarea {

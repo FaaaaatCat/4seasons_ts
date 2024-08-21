@@ -52,7 +52,8 @@ export default function MakeTweet() {
                     userName: user.displayName || "익명의 마법사",
                     userId: user.uid,
                     photoURL: user.photoURL,
-                    missionType: 'text'
+                    missionType: 'text',
+                    page : 'page1'
                 });
             }
             else if (selectedOption === 'link') {
@@ -69,7 +70,8 @@ export default function MakeTweet() {
                     userId: user.uid,
                     photoURL: user.photoURL,
                     //photo: metadata?.image,
-                    missionType: 'link'
+                    missionType: 'link',
+                    page : 'page1'
                 });
                 
             }

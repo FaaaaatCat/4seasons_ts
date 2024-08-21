@@ -38,7 +38,7 @@ export default function TimeLine() {
             });
             setTweet(tweetData);
         })
-       
+       return () => { unsubscribe() }
         // const snapshot = await getDocs(tweetQuery);
         // const tweetdata = snapshot.docs.map((doc) => {
         //     const { tweet, createdAt, userId, userName, photo } = doc.data();

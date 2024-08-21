@@ -1,26 +1,27 @@
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 import { useState } from "react"
-import { auth, dbService } from "../firebase";
+import { dbService } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { FirebaseError } from "firebase/app";
 import { addDoc, collection } from "firebase/firestore";
+import { GoHomeFill } from "react-icons/go";
 
 export default function CreateAccount() {
     const auth = getAuth();
-    const user = auth.currentUser;
     const [isLoading, setIsLoading] = useState(false);
-    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const defaultProfile = 'https://firebasestorage.googleapis.com/v0/b/gratia-2cdd0.appspot.com/o/gratine%2Fdefault_profile.png?alt=media&token=9003c59f-8f33-4d0a-822c-034682416355';
+
+    const goToHome = () => {
+        navigate('/')
+    }
 
     const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const {target:{name,value}} = e;
-        if(name === 'name'){
-            setName(value);
-        }
-        else if(name === 'email'){
+        if(name === 'email'){
             setEmail(value);
         }
         if(name === 'password'){
@@ -30,7 +31,7 @@ export default function CreateAccount() {
     const onSubmit = async(e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setError("");
-        if(isLoading || name ==="" || email ==="" || password ==="") return;
+        if(isLoading || email ==="" || password ==="") return;
         try{
             setIsLoading(true);
             const credentials = await createUserWithEmailAndPassword(auth, email, password);
@@ -38,12 +39,10 @@ export default function CreateAccount() {
             const fbUserObj = {
                 uid: credentials.user.uid,
                 email: email,
+                displayName: email.split("@")[0], //파이어베이스에서 관리유용을 위해(이름 없으면 누가누군지 구별x) 중복데이터지만 여기에도 저장함.
                 money: 0,
-                item: '완드, 학생증',
-                hp: 100,
+                item: '소지품',
                 login: true,
-                displayName: email.split("@")[0],
-                // photoURL: defaultProfile,
                 attendCount : 0,
                 attendRanNum: 0,
                 totalAttend: 0,
@@ -52,7 +51,8 @@ export default function CreateAccount() {
             await addDoc(collection(dbService, "user"), fbUserObj);
 
             await updateProfile(credentials.user,{
-                displayName: name,
+                displayName: email.split("@")[0],
+                photoURL: defaultProfile,
             });
             navigate("/");
         }
@@ -71,17 +71,20 @@ export default function CreateAccount() {
 
     return (
         <>
-            <div className={"signin-area"}>
-                <p>Create Account</p>
+            <div className={"login-area"}>
+                <div className="goToHome" onClick={goToHome}>
+                    <GoHomeFill size="24" />
+                    <p>홈으로</p>
+                </div>
+                <h4>회원가입</h4>
+                {error !="" ? <p className={"errorMsg"}>{error}</p> : null}
                 <form onSubmit={onSubmit}>
-                    <input name="name" placeholder="name" type="text" onChange={onChange} value={name}  required />
                     <input name="email" placeholder="email" type="email" onChange={onChange} value={email} required/>
                     <input name="password" placeholder="password" type="password" onChange={onChange} value={password} required/>
-                    <input type="submit" value={isLoading ? "Loading..." : "Create Account"} />
+                    <input type="submit" value={isLoading ? "Loading..." : "계정 생성하기"} />
                 </form>
-                {error !="" ? <p className={"errorMsg"}>{error}</p> : null}
                 <div>
-                    Already have an account? <Link to="/login">Log in &rarr;</Link>
+                    이미 계정이 있나요? <Link to="/login">로그인 하기 &rarr;</Link>
                 </div>
             </div>
         </>

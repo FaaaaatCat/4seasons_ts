@@ -26,58 +26,273 @@
 }
 
 //전체
+$full-size: 600px;
 body {
-}
-
-//홈
-.home-menu{
-  border: 1px solid black;
-  padding: 1rem;
-  display: flex;
-  gap: 1rem;
-  & li{
-    border: 1px solid black;
-    padding: 1rem;
-    background-color: lightblue;
-  }
-}
-
-
-//미션
-.mission-area{
-  padding: 1rem;
-  border:  1px solid red;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  & textarea{
-    border: 2px solid gray;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 16px;
-    color: black;
-    width: 100%;
-    resize: none;
-    &::placeholder{
-      font-size: 16px;
-    }
-    &:focus{
-      outline: none;
-      border-color: red;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  & .center {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    overflow: hidden;
+    width: $full-size;
+    background-color: $gray-200;
+    @media screen and (max-width: $full-size) {
+      width: 100%;
     }
   }
-  & label{
-    padding: 10px;
-    color: blue;
-    text-align: center;
-    border-radius: 20px;
-    border: 1px solid blue;
-    font-size: 14px;
+}
+
+//헤더
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  height: 60px;
+  background-color: white;
+  box-shadow: $form-shadow;
+  & p {
+    font-size: 1.2rem;
     font-weight: bold;
   }
 }
 
+//홈
+.home-area {
+  border: 1px solid black;
+  & .home__banner {
+    width: 100%;
+    height: 400px;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  & .home__menu {
+    //padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    &.test li {
+      background-color: lightgray;
+    }
+    & li {
+      flex: 1;
+      & a {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        display: flex;
+        border: 1px solid black;
+        height: 100px;
+        background-color: lightblue;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+      &:hover {
+        cursor: pointer;
+        filter: brightness(90%);
+        transition: all 0.3s;
+      }
+    }
+  }
+  & .home__information {
+    padding: 1rem;
+    & p {
+      padding: 10px 0;
+      font-weight: bold;
+    }
+    & ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      & li {
+        border: 1px solid black;
+        padding: 1rem;
+        background-color: lightpink;
+        text-align: center;
+        width: calc(50% - 0.5rem);
+        &:hover {
+          cursor: pointer;
+          filter: brightness(90%);
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+}
 
+//미션
+.mission-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  //미션지
+  & .mission-quest {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background-color: white;
+    border-radius: $form-radius;
+    box-shadow: $form-shadow;
+    text-align: center;
+    & .leftTime {
+      display: flex;
+      justify-content: center;
+      & span {
+        font-weight: bold;
+        display: inline-block;
+        padding: 0.5rem;
+        background-color: $gray-800;
+        color: white;
+        border-radius: $form-radius;
+        font-size: 0.9rem;
+      }
+    }
+    & p {
+      font-size: 1.1rem;
+    }
+    & h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    & h3 {
+      line-height: 1.6;
+    }
+  }
+  //미션 하는곳
+  & .mission-do {
+    padding: 1rem;
+    background-color: $gray-400;
+    border-radius: $form-radius;
+    box-shadow: $form-shadow;
+    // & .my-radio {
+    //   font-size: 18px;
+    //   line-height: 2rem;
+    //   padding: 0.2em 0.4em;
+    //   & input[type="radio"] {
+    //     appearance: none;
+    //     border: max(2px, 0.1em) solid gray;
+    //     border-radius: 50%;
+    //     width: 1.25em;
+    //     height: 1.25em;
+    //     transition: border 0.5s ease-in-out;
+    //     &:checked {
+    //       border: 0.4em solid tomato;
+    //     }
+    //     &:focus-visible {
+    //       outline-offset: max(2px, 0.1em);
+    //       outline: max(2px, 0.1em) dotted tomato;
+    //     }
+    //     &:hover {
+    //       box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+    //       cursor: pointer;
+    //     }
+    //     &:hover + span {
+    //       cursor: pointer;
+    //     }
+    //     &:disabled {
+    //       background-color: lightgray;
+    //       box-shadow: none;
+    //       opacity: 0.7;
+    //       cursor: not-allowed;
+    //     }
+    //     &:disabled + span {
+    //       opacity: 0.7;
+    //       cursor: not-allowed;
+    //     }
+    //   }
+    // }
+
+    & .mission-text {
+      & textarea {
+        padding: 20px !important;
+        font-size: 16px;
+        resize: none;
+        height: unset;
+        &::placeholder {
+          font-size: 16px;
+        }
+      }
+      & .textAccount {
+        text-align: right;
+        & span {
+          transform: translateY(-30px) translateX(-8px);
+          font-size: 0.8rem;
+          font-weight: 800;
+          opacity: 0.8;
+          background-color: white;
+          display: inline-block;
+        }
+      }
+    }
+    & .custom-radio {
+      width: 24px;
+      height: 24px;
+      border-radius: $form-radius;
+      border: 2px solid rgb(255, 255, 255);
+      position: relative;
+      &.on {
+        background-color: rgba(255, 255, 255, 0.475);
+        &::after {
+          content: "✔️";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+  //미션 리스트
+  & .mission-list {
+    background-color: white;
+    padding: 1rem;
+    & .mission-item {
+      border-bottom: 1px solid lightgray;
+      white-space: pre-wrap;
+      margin-bottom: 0.5rem;
+      & .profile-area {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        & .userPhoto {
+          width: 40px;
+          height: 40px;
+          border: 1px solid black;
+          border-radius: $form-radius;
+        }
+        & b {
+          font-weight: bold;
+        }
+        & p {
+          font-size: 0.8rem;
+        }
+      }
+      & .content-area {
+        padding: 1rem;
+        & a {
+          color: blue;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        & .mission-img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
 
 *::-webkit-scrollbar {
   width: 6px;

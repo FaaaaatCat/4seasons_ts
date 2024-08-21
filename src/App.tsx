@@ -1,33 +1,109 @@
 import { useEffect, useState } from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { auth } from './firebase';
+import { createGlobalStyle } from 'styled-components';
+
+import reset from 'styled-reset';
 import Layout from './components/layout';
 import Home from './routes/home';
 import Profile from './routes/profile';
 import Login from './routes/login';
 import CreateAccount from './routes/create-account';
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
 import LoadingScreen from './components/loading-screen';
-import { auth } from './firebase';
 import ProtectedRoute from './components/protected-route';
+import Attend from './routes/attend';
+import Member from './routes/member';
+import Shop from './routes/shop';
+import Mission from './routes/mission';
+
+// const router = createBrowserRouter([
+//   //로그인한 사용자가 보는 화면
+//   {
+//     path: "/",
+//     element: <ProtectedRoute>
+//       <Layout />
+//     </ProtectedRoute>, //오직 로그인한 유저만 사용
+//     children: [
+//       {
+//         path: "",
+//         element : <Home />
+//       },
+//       {
+//         path: "profile",
+//         element : <Profile />
+//       },
+//       {
+//         path: "attend",
+//         element : <Attend />
+//       },
+//       {
+//         path: "member",
+//         element : <Member />
+//       },
+//       {
+//         path: "shop",
+//         element : <Shop />
+//       },
+//       {
+//         path: "mission",
+//         element : <Mission />
+//       }
+//     ]
+//   },
+//   //로그인 전에 보는 화면
+//   {
+//     path: "/login",
+//     element: <Login />
+//   },
+//   {
+//     path: "/create-account",
+//     element: <CreateAccount />
+//   }
+// ])
 
 const router = createBrowserRouter([
-  //로그인한 사용자가 보는 화면
   {
-    path: "/",
-    element: <ProtectedRoute><Layout /></ProtectedRoute>, //오직 로그인한 유저만 사용
+    path: "",
+    element: <Layout title="홈" home />,
     children: [
-      {
-        path: "",
-        element : <Home />
-      },
-      {
-        path: "profile",
-        element : <Profile />
-      }
+      {index: true, element: <Home />}
     ]
   },
-  //로그인 전에 보는 화면
+  {
+    path: "profile",
+    element: <Layout title="Profile" />,
+    children: [
+      {index: true, element: <Profile />}
+    ]
+  },
+  {
+    path: "attend",
+    element: <Layout title="출석" />,
+    children: [
+      {index: true, element: <Attend />}
+    ]
+  },
+  {
+    path: "member",
+    element: <Layout title="멤버란" />,
+    children: [
+      {index: true, element: <Member />}
+    ]
+  },
+  {
+    path: "shop",
+    element: <Layout title="상점" />,
+    children: [
+      {index: true, element: <Shop />}
+    ]
+  },
+  {
+    path: "mission",
+    element: <ProtectedRoute><Layout title="의뢰 게시판" /></ProtectedRoute>,
+    children: [
+      {index: true, element: <Mission />}
+    ]
+  },
   {
     path: "/login",
     element: <Login />
@@ -35,7 +111,7 @@ const router = createBrowserRouter([
   {
     path: "/create-account",
     element: <CreateAccount />
-  }
+  },
 ])
 
 //글로벌 스타일 만드는 곳
@@ -60,8 +136,11 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      {/* <RouterProvider router={router} /> */}
-      {isLoading ? <LoadingScreen /> : <RouterProvider router={router} />}
+      <div className='background'></div>
+      <div className='center'>
+        {isLoading ? <LoadingScreen /> : <RouterProvider router={router} />}
+      </div>
+      
       
     </>
   )

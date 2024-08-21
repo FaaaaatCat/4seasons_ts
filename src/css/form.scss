@@ -14,7 +14,7 @@
 
 #root {
   //셀렉트
-  @at-root .sz-select {
+  @at-root .select {
     height: $form-height;
     padding: 0 0.5rem;
     border: none;
@@ -25,9 +25,9 @@
   }
 
   //인풋
-  @at-root .sz-input {
+  @at-root input, textarea {
     height: $form-height;
-    padding: 0 $form-left-padding;
+    padding: 0 $form-left-padding !important;
     // background-color: white !important; //왜 안되지?
     border: 1px solid $form-border-color;
     border-radius: $form-radius;
@@ -44,7 +44,7 @@
   }
 
   //버튼
-  @at-root .sz-btn {
+  @at-root .btn {
     display: block;
     width: 150px;
     height: $form-height;
@@ -64,6 +64,14 @@
         filter: none !important;
         cursor: auto;
       }
+    }
+    &.btn-big{
+      height: 44px !important;
+      width: 100%;
+      font-size: 1rem;
+    }
+    &.btn-small{
+      width: unset;
     }
     &.btn-icon-only {
       width: $form-height;
@@ -89,6 +97,9 @@
     &.btn-mint {
       background-color: $purple;
       color: white;
+    }
+    &.btn-gray{
+      background-color: $gray-300;
     }
     &.btn-white {
       background: white;

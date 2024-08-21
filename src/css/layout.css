@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .logo {
   width: 180px;
   height: 30px;
@@ -22,24 +23,162 @@
   height: 58px;
 }
 
-.home-menu {
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 600px;
+  background-color: #eceaf2;
+}
+
+@media screen and (max-width: 600px) {
+  body .center {
+    width: 100%;
+  }
+}
+
+.header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  height: 60px;
+  background-color: white;
+  -webkit-box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+          box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+}
+
+.header p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.home-area {
   border: 1px solid black;
+}
+
+.home-area .home__banner {
+  width: 100%;
+  height: 400px;
+  background-color: lightgray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.home-area .home__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home-area .home__menu.test li {
+  background-color: lightgray;
+}
+
+.home-area .home__menu li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.home-area .home__menu li a {
+  width: 100%;
+  height: 100%;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1rem;
+  border: 1px solid black;
+  height: 100px;
+  background-color: lightblue;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.home-menu li {
+.home-area .home__menu li:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.home-area .home__information {
+  padding: 1rem;
+}
+
+.home-area .home__information p {
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.home-area .home__information ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home-area .home__information ul li {
   border: 1px solid black;
   padding: 1rem;
-  background-color: lightblue;
+  background-color: lightpink;
+  text-align: center;
+  width: calc(50% - 0.5rem);
+}
+
+.home-area .home__information ul li:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .mission-area {
-  padding: 1rem;
-  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,45 +189,172 @@
   gap: 1rem;
 }
 
-.mission-area textarea {
-  border: 2px solid gray;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 16px;
-  color: black;
-  width: 100%;
-  resize: none;
-}
-
-.mission-area textarea::-webkit-input-placeholder {
-  font-size: 16px;
-}
-
-.mission-area textarea:-ms-input-placeholder {
-  font-size: 16px;
-}
-
-.mission-area textarea::-ms-input-placeholder {
-  font-size: 16px;
-}
-
-.mission-area textarea::placeholder {
-  font-size: 16px;
-}
-
-.mission-area textarea:focus {
-  outline: none;
-  border-color: red;
-}
-
-.mission-area label {
-  padding: 10px;
-  color: blue;
+.mission-area .mission-quest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  background-color: white;
+  border-radius: 4px;
+  -webkit-box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+          box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
   text-align: center;
-  border-radius: 20px;
-  border: 1px solid blue;
-  font-size: 14px;
+}
+
+.mission-area .mission-quest .leftTime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mission-area .mission-quest .leftTime span {
   font-weight: bold;
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: #373353;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.mission-area .mission-quest p {
+  font-size: 1.1rem;
+}
+
+.mission-area .mission-quest h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.mission-area .mission-quest h3 {
+  line-height: 1.6;
+}
+
+.mission-area .mission-do {
+  padding: 1rem;
+  background-color: #c5c2d3;
+  border-radius: 4px;
+  -webkit-box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+          box-shadow: 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+}
+
+.mission-area .mission-do .mission-text textarea {
+  padding: 20px !important;
+  font-size: 16px;
+  resize: none;
+  height: unset;
+}
+
+.mission-area .mission-do .mission-text textarea::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+.mission-area .mission-do .mission-text textarea:-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.mission-area .mission-do .mission-text textarea::-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.mission-area .mission-do .mission-text textarea::placeholder {
+  font-size: 16px;
+}
+
+.mission-area .mission-do .mission-text .textAccount {
+  text-align: right;
+}
+
+.mission-area .mission-do .mission-text .textAccount span {
+  -webkit-transform: translateY(-30px) translateX(-8px);
+          transform: translateY(-30px) translateX(-8px);
+  font-size: 0.8rem;
+  font-weight: 800;
+  opacity: 0.8;
+  background-color: white;
+  display: inline-block;
+}
+
+.mission-area .mission-do .custom-radio {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 2px solid white;
+  position: relative;
+}
+
+.mission-area .mission-do .custom-radio.on {
+  background-color: rgba(255, 255, 255, 0.475);
+}
+
+.mission-area .mission-do .custom-radio.on::after {
+  content: "✔️";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.mission-area .mission-list {
+  background-color: white;
+  padding: 1rem;
+}
+
+.mission-area .mission-list .mission-item {
+  border-bottom: 1px solid lightgray;
+  white-space: pre-wrap;
+  margin-bottom: 0.5rem;
+}
+
+.mission-area .mission-list .mission-item .profile-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+
+.mission-area .mission-list .mission-item .profile-area .userPhoto {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.mission-area .mission-list .mission-item .profile-area b {
+  font-weight: bold;
+}
+
+.mission-area .mission-list .mission-item .profile-area p {
+  font-size: 0.8rem;
+}
+
+.mission-area .mission-list .mission-item .content-area {
+  padding: 1rem;
+}
+
+.mission-area .mission-list .mission-item .content-area a {
+  color: blue;
+}
+
+.mission-area .mission-list .mission-item .content-area a:hover {
+  cursor: pointer;
+}
+
+.mission-area .mission-list .mission-item .content-area .mission-img {
+  width: 100%;
 }
 
 *::-webkit-scrollbar {

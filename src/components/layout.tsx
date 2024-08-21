@@ -1,28 +1,24 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Header from "./header";
+import { useEffect, useState } from "react";
 import { auth } from "../firebase";
 
+interface LayoutProps {
+    title: string;
+    home?: boolean;
+}
 
-export default function Layout() {
-    const navigate = useNavigate();
-    const onLogOut = async () => {
-        const ok = confirm("진짜 로그아웃 합니까?");
-        if (ok) {
-            await auth.signOut();
-            navigate("/login")
-        }
-    }
+export default function Layout({ title, home }: LayoutProps) {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    useEffect(() => {
+        const user = auth.currentUser;
+        setIsLoggedIn(user !== null);
+      }, []);
+    
     return (
         <>
-            <ul className="home-menu">
-                <Link to="/">
-                    <li>Home</li>
-                </Link>
-                <Link to="/profile">
-                    <li>Profile</li>
-                </Link>
-                <li onClick={onLogOut}>logout</li>
-            </ul>
-            <Outlet />
+            <Header title={title} home={home} isLoggedIn={isLoggedIn} />
+            <Outlet context={{isLoggedIn}} />
         </>
     )
 }

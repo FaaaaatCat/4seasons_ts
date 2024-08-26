@@ -24,7 +24,7 @@ export default function Tweet({userName, photo, tweet, photoURL, createdAt, miss
     }
     return (
         <div className="mission-item">
-            <div className="profile-area">
+            <div className="mission__profile">
                 <img src={photoURL} alt="" className="userPhoto"/>
                 <div className="flx-col flx-1">
                     <b>{userName}</b>
@@ -34,7 +34,7 @@ export default function Tweet({userName, photo, tweet, photoURL, createdAt, miss
                     <button onClick={deleteMission} className="btn btn-small">삭제</button>
                 </> : null}
             </div>
-            <div className="content-area">
+            <div className="mission__content">
                 {missionType === 'text' ?
                     <>{tweet}</>
                     : missionType === 'link' ?

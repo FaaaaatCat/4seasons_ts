@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { HiArrowLeft } from "react-icons/hi";
+import { FaHatWizard } from "react-icons/fa6";
 
 interface HeaderProps{
     title: string;
@@ -33,7 +34,7 @@ export default function Header({ title, home, isLoggedIn }: HeaderProps) {
             {
                 isLoggedIn ?
                     <Link to="/profile">
-                        <button className='my-btn btn-icon-only'>Profile</button>
+                        <FaHatWizard />
                     </Link>
                 : <button onClick={goToLogin}>로그인</button>
             }

@@ -9,15 +9,16 @@
 }
 //로고
 @at-root .logo {
-  width: 180px;
-  height: 30px;
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/gratia-2cdd0.appspot.com/o/gratine%2Flogo.png?alt=media&token=e45f8be9-4a1f-444a-8fbd-f2f1f2bb48b3");
+  width: 140px;
+  height: 40px;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/seasons-71566.appspot.com/o/4seasons%2Flogo.png?alt=media&token=9f1ff568-ad69-4b55-85dd-b7914b6b893b");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0;
+  transform: scaleY(80%);
   &.logo_black {
     background-image: url("https://firebasestorage.googleapis.com/v0/b/gratia-2cdd0.appspot.com/o/gratine%2Flogo2.png?alt=media&token=1b862dd5-1aa0-4321-9fcf-77d6388514d3");
     width: 148px;
@@ -38,7 +39,6 @@ body {
     margin: 0 auto;
     overflow: hidden;
     width: $full-size;
-    background-color: $gray-200;
     @media screen and (max-width: $full-size) {
       width: 100%;
     }
@@ -58,11 +58,23 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
   }
+  & a {
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
+    &:hover {
+      transition: all .3s;
+      filter: invert(69%) sepia(60%) saturate(2545%) hue-rotate(1deg)
+        brightness(104%) contrast(104%);
+    }
+  }
 }
 
 //홈
 .home-area {
-  border: 1px solid black;
+  background-color: white;
+  height: 100%;
   & .home__banner {
     width: 100%;
     height: 400px;
@@ -73,7 +85,7 @@ body {
     text-align: center;
   }
   & .home__menu {
-    //padding: 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -134,6 +146,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-color: $gray-200;
   //미션지
   & .mission-quest {
     display: flex;
@@ -261,7 +274,7 @@ body {
       border-bottom: 1px solid lightgray;
       white-space: pre-wrap;
       margin-bottom: 0.5rem;
-      & .profile-area {
+      & .mission__profile {
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -278,7 +291,7 @@ body {
           font-size: 0.8rem;
         }
       }
-      & .content-area {
+      & .mission__content {
         padding: 1rem;
         & a {
           color: blue;
@@ -293,6 +306,34 @@ body {
     }
   }
 }
+
+
+//프로필
+.profile-area{
+  height: 100%;
+  background-color: $gray-200;
+  border: 1px solid black;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  & .profile__pic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    & img{
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+
+
+
+
+
+
 
 *::-webkit-scrollbar {
   width: 6px;

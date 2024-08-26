@@ -3,6 +3,7 @@ import Header from "./header";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase";
 
+
 interface LayoutProps {
     title: string;
     home?: boolean;

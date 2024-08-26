@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MakeTweet from "../components/makeTweet";
 import TimeLine from "../components/timeLine";
 import Quest from "./quest";
@@ -20,11 +20,14 @@ export interface ITweet {
 }
 
 export default function Mission() {
-     const [tweet, setTweet] = useState<ITweet[]>([]);
+    const [tweet, setTweet] = useState<ITweet[]>([]);
     // 현재 선택된 페이지를 상태로 관리
-    const [selectedPage, setSelectedPage] = useState<string>("page1");
+    const [selectedPage, setSelectedPage] = useState<string>("page1"); //<-이 안에 들어가는 page1을 매일 다음숫자로 넘겨주는 기능 필요
     const selectedValueRef = useRef<string>("page1");
     
+    //오늘을 알 수 있는 것 <- 이건 우선 서버 올리고 다시 만들자.
+    //오늘이 오늘날짜면, makeTweet을 비활성화
+    //오늘이 오늘날짜가 아니면 잘했다는 텍스트를 활성화.
 
     // 페이지 변경 핸들러
     const handlePageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
